@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Remote Control Vehicle List</h1>
+
+  {% for vehicle in remote_control_vehicles %}
+    <div class="card">
+      <a href="{% url 'detail' vehicle.id %}">
+        <div class="card-content">
+          <span class="card-title">{{ vehicle.brand }} - {{ vehicle.model }}</span>
+          <p>Description: {{ vehicle.description }}</p>
+          <p>Price: ${{ vehicle.price }}</p>
+        </div>
+      </a>
+    </div>
+  {% endfor %}
+{% endblock %}
