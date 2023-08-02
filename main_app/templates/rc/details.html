@@ -1,14 +1,15 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %}
 
-  <h3>Remote Control Vehicle Details</h3>
+{% block content %}
+  <div class="container">
+    <h3>Remote Control Vehicle Details</h3>
 
-
-    <div class="card">
-        <div class="card-content">
-          <span class="card-title">{{ rc.brand }} - {{ rc.model }}</span>
-          <p>Description: {{ rc.description }}</p>
-          <p>Price: ${{ rc.price }}</p>
-        </div>
+    <div class="card mb-4">
+      <div class="card-body">
+        <h5 class="card-title">{{ rc.brand }} - {{ rc.model }}</h5>
+        <p class="card-text">Description: {{ rc.description }}</p>
+        <p class="card-text">Price: ${{ rc.price }}</p>
+      </div>
     </div>
-
+  </div>
 {% endblock %}
