@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from .models import RemoteControlVehicle
 
 # Create your views here.
 def home(request):
@@ -10,8 +10,10 @@ def about(request):
 
 
 def rc_index(request):
-    return render(request, "rc/index.html")
+    rc = RemoteControlVehicle.objects.all()
+    print(rc)
+    return render(request, "rc/index.html", {"rc": rc})
 
-def index_view(request):
-    vehicles = RemoteControlVehicle.objects.all()
-    return render(request, 'rc/index.html', {'remote_control_vehicles': vehicles})
+def rc_detail(request, rc_id):
+    rc_instance = RemoteControlVehicle.objects.get(id=rc_id)
+    return render(request, 'rc/details.html', {'rc': rc_instance})

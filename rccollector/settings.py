@@ -77,7 +77,7 @@ WSGI_APPLICATION = "rccollector.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "rccollector",
+        "NAME": 'rccollector',
     }
 }
 
