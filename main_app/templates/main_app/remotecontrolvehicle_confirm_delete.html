@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Delete Vehicle</h1>
+
+  <h4>Are you sure you want to delete <span class="red-text">{{ rc.brand }}</span>?</h4>
+
+  <form action="" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="Delete!" class="btn">
+    {% comment %} <a href="{% url 'rc_index' rc.id %}">Cancel</a> {% endcomment %}
+  </form>
+{% endblock %}
+
+
+{% comment %} Need help getting the name of rc to show and getting the cancel button to route back t o details  {% endcomment %}

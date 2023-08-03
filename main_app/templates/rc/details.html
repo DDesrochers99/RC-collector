@@ -1,15 +1,17 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% block content %}
+<div class="container">
+  <h3>Remote Control Vehicle Details</h3>
 
-{% block content %}
-  <div class="container">
-    <h3>Remote Control Vehicle Details</h3>
-
-    <div class="card mb-4">
-      <div class="card-body">
-        <h5 class="card-title">{{ rc.brand }} - {{ rc.model }}</h5>
-        <p class="card-text">Description: {{ rc.description }}</p>
-        <p class="card-text">Price: ${{ rc.price }}</p>
-      </div>
+  <div class="card mb-4">
+    <div class="card-body">
+      <h5 class="card-title">{{ rc.brand }} - {{ rc.model }}</h5>
+      <p class="card-text">Description: {{ rc.description }}</p>
+      <p class="card-text">Price: ${{ rc.price }}</p>
     </div>
   </div>
+  <div class="card-action">
+    <a href="{% url 'rc_update' rc.id %}"class="btn">Edit</a>
+    <a href="{% url 'rc_delete' rc.id %}" class="btn">Delete</a>
+  </div>
+</div>
 {% endblock %}
