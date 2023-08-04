@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Delete Vehicle:<span class="text-warning"> {{object.brand}}  {{object.model}}<span></h1>
+
+  <h4>Are you sure you want to delete?</h4>
+
+  <form action="" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="Delete!" class="btn text-danger">
+    <a href="{% url 'detail' object.id %}" class="btn text-success">Cancel</a>
+  </form>
+{% endblock %}
+
