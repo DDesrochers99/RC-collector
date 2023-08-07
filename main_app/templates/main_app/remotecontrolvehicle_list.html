@@ -6,8 +6,8 @@
 
     <div class="row">
       {% for vehicle in object_list %}
-        <div class="col-md-4">
-          <div class="card mb-4">
+        <div class="col-md-6">
+          <div class="card mb-2">
             <a href="{% url 'detail' vehicle.id %}">
               <div class="card-body">
                 <h5 class="card-title">{{ vehicle.brand }} - {{ vehicle.model }}</h5>
